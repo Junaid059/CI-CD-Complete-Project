@@ -46,6 +46,8 @@ jobs:
 
     - name: Gitleaks Code Scan
     - run: gitleak detect source . -r gitleaks-report.json -f json
+
+    
     
 
 
