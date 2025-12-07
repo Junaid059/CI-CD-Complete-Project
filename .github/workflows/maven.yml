@@ -10,7 +10,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v4
@@ -24,7 +24,7 @@ jobs:
       run: mvn -B package --file pom.xml
 
   Security-Checks:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: build
 
     steps:
@@ -45,7 +45,7 @@ jobs:
       run: sudo apt install gitleaks -y
 
     - name: Gitleaks Code Scan
-      run: gitleaks detect --source . --report-path gitleaks-report.json --report-format json
+      run: gitleaks detect --source. --report-path gitleaks-report.json --report-format json
 
     
     
