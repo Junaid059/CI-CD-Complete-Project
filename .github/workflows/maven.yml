@@ -134,6 +134,8 @@ jobs:
 
     - name: Build image
       run: docker build -t junaid757/bank-app:latest .
-    - name: Build image
+
+    - name: Push image
       run: docker push junaid757/bank-app:latest
+
     
