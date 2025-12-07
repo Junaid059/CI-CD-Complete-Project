@@ -132,9 +132,8 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v3
 
-    - name: Build and push image
-      uses: docker/build-push-action@v6
-      with:
-        context: .
-        push: true
-        tags: junaid75/bank-app:latest
+    - name: Build image
+      run: docker build -t junaid757/bank-app:latest .
+    - name: Build image
+      run: docker push junaid757/bank-app:latest .
+    
